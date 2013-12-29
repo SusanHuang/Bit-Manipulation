@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class bitManipulation {
+	
+	static Scanner userInput = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		int m = 0;
+		int n = 0;
+		int bitShift = 0;
+		System.out.print("The first integer is: ");
+		if (userInput.hasNextInt()) {
+			m = userInput.nextInt();
+		}
+		else {
+			System.out.println("That was not an integer!");
+		}
+		
+		System.out.print("The second integer is: ");
+		if (userInput.hasNextInt()) {
+			n = userInput.nextInt();
+		}
+		else {
+			System.out.println("That was not an integer!");
+		}
+		
+		System.out.println("Left shift the number by: ");
+		if (userInput.hasNextInt()) {
+			bitShift = userInput.nextInt();
+		}
+		else {
+			System.out.println("That was not an integer!");
+		}
+		
+		System.out.println("The sum of the integers is: " + (m + n));
+		System.out.println("The sum of the numbers using binary is: " +andBit(m, n));
+		System.out.println("The result of using 'or' on the input numbers(converted to binary): " + orBit(m, n));
+		System.out.println("The result of using 'xor' on the input numbers(converted to binary): " + xOrBit(m, n));
+		System.out.println("The compliment of the first input using binary is: " + compBit(m));
+		System.out.println("The compliment of the second input using binary is: " + compBit(n));
+		System.out.println("The result of the bit shift to the left is: " + leftShift(m, bitShift));
+	}
+	
+	public static int andBit(int i, int j) {
+		int k = 0;
+		k = i & j;
+		return k;
+	}
+	
+	public static int orBit(int i, int j) {
+		int k = 0;
+		k = i | j;
+		return k;
+	}
+	
+	public static int xOrBit(int i, int j) {
+		int k = 0;
+		k = i^j;
+		return k;
+	}
+
+	public static int compBit(int i) {
+		int k = 0;
+		k = ~i;
+		return k;
+	}
+	
+	public static int leftShift(int i, int p) {
+		int k = i << p;
+		return k;
+	}
+	
+	public static int rightShift(int i, int p) {
+		int k = i >> p;
+		return k;
+	}
+}
